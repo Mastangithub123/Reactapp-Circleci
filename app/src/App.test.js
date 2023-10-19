@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/example app/i);
+  const linkElement = screen.getByText(/Welcome to Matan World ..! you have deployed your application successfully by CircleCI/i);
   expect(linkElement).toBeInTheDocument();
 });
