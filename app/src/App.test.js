@@ -6,3 +6,4 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/Welcome to Matan World ..! you have deployed your application successfully by CircleCI/i);
   expect(linkElement).toBeInTheDocument();
 });
+
