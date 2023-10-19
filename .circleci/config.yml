@@ -30,22 +30,19 @@ jobs:
           paths:
             - .
   deploy:
-    machine:
-        image: ubuntu-2004:202010-01
-    steps:
-      - attach_workspace:
-          at: .
-      - checkout
-      - run:
-        name: Debugging Info
-        command: |
-          echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
-          echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
-          echo "AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION"
-          ls -al ./app/build  # Print the contents of the local directory
-      - run: aws s3 sync ./app/build s3://cicrcleci-s3
-    
-
+  machine:
+    image: ubuntu-2004:202010-01
+  steps:
+    - attach_workspace:
+        at: .
+    - checkout
+    - run: |
+        echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
+        echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
+        echo "AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION"
+        ls -al ./app/build  # Print the contents of the local directory
+        aws s3 sync ./app/build s3://cicrcleci-s3
+        
 workflows:
   build_test_deploy:
     jobs:
