@@ -45,7 +45,7 @@ jobs:
             echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
             echo "AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION"
             ls -al ./app/build  # Print the contents of the local directory
-            aws s3 sync ./app/build s3://cicrcleci-s3
+            aws s3 sync ./app/build s3://circleci-s3
 
 workflows:
   version: 2
