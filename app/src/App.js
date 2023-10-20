@@ -7,7 +7,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="title">
-          I am an Example App Running in the Cloud1
+        Hii Mastan, you have successfully deployed your React app with CircleCI
         </div>
       </div>
     );
